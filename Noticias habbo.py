@@ -9,13 +9,13 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 hotel="es" ## es -> com ->it -> de -> fr -> com.tr ->nl -> com.br
 
-titulo = soup.find('h2', class_='news-header__title').text
+titulo = soup.find_all('h2', class_='news-header__title')[1].text
 
-imagen = soup.find('img')
+imagen = soup.find_all('img')[2]
 
-urlNoticia = soup.find('a')
+urlNoticia = soup.find_all('a')[3]
 
-descripcion = soup.find('p', class_='news-header__wrapper news-header__summary').text
+descripcion = soup.find_all('p', class_='news-header__wrapper news-header__summary')[1].text
 
 os.system('cls')
 
